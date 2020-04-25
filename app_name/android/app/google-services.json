@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "357274697906",
+    "firebase_url": "https://crowd-mapping.firebaseio.com",
+    "project_id": "crowd-mapping",
+    "storage_bucket": "crowd-mapping.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357274697906:android:c234784eb6d589510f49ab",
+        "android_client_info": {
+          "package_name": "com.example.app_name"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357274697906-ut4fsh5loq7500ig1ncv4uk01redqeqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT8Bed_dGLZIGFnMAKpLBu_44l9H_yxNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357274697906-ut4fsh5loq7500ig1ncv4uk01redqeqs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -54,12 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Future updateData(String position, int weight) async {
     var data = {'positon': position, 'weight': weight};
 
-    return await locationCollection.where(position);
-    //    .then((ref) {
-    //   print(data);
-    // }).catchError((error) {
-    //   print(error);
-    // });
+    return await locationCollection.add(data).then((ref) {
+      print(data);
+    }).catchError((error) {
+      print(error);
+    });
   }
 
   @override
