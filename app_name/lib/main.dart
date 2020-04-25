@@ -39,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     Timer.periodic(Duration(seconds: 2), (Timer _) {
       getLocation();
+      updateData(_currentPosition.toString(), 1);
     });
   }
 
