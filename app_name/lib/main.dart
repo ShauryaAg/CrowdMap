@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'package:app_name/home.dart';
+import 'package:app_name/map.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -26,6 +29,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int currentIndex = 0;
+  final List<Widget> children = [
+    Home(),
+    MapScreen(),
+  ];
+
   final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
   final CollectionReference locationCollection =
       Firestore.instance.collection('Location');
@@ -64,6 +73,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Text(_currentPosition.toString());
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Location"),
+      ),
+      body: children[currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white30,
+          iconSize: 20,
+          onTap: onTapped,
+          currentIndex: currentIndex,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home), title: Text('Home')),
+            BottomNavigationBarItem(icon: Icon(Icons.map), title: Text('Map')),
+          ]),
+    );
+  }
+
+  void onTapped(int index) {
+    setState(() {
+      currentIndex = index;
+    });
   }
 }
